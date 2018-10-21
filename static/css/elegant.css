@@ -4,6 +4,10 @@ body,
 html {
     height: 100%;
 }
+.row-fluid [class*="offset"]:first-child h1
+{
+	width: 85%;
+}
 #content-sans-footer {
     min-height: 100%;
     margin-bottom: -60px;
@@ -12,12 +16,17 @@ html {
     height: 60px;
 }
 h1,
-h2,
+h2
+{
+	font-family: Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
+    font-weight: normal;
+		
+}
 h3,
 h4,
 h5,
 h6 {
-    font-family: Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
+    font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
     font-weight: normal;
 }
 h1 small, h1 a, h1 a:hover,
@@ -183,6 +192,28 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     text-decoration: none;
     text-shadow: none;
 }
+article.recent-posts-article
+{
+	display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+div.recent-posts-readmore a
+{ font-size:15px;
+  color:#0a0a0a
+}
+
+article.recent-posts-article time
+{
+	margin: 0px 0 15px 0
+}
+article.recent-posts-article img
+{
+	margin: 0px 0 15px 0;
+	width : 55%;
+	max-height :80%;
+}
+
 .article-content, div.recent-posts p {
     font: 1.2em/1.6em 'PT Serif', Georgia, 'Times New Roman', Times, Serif;
     text-align: justify;
@@ -427,14 +458,20 @@ div.blog-archives h2 {
     position: relative;
     margin:0;
 }
-div.blog-archives article, div.recent-posts article {
+div.blog-archives article{
     border-bottom: 1px dotted #AAA;
 }
-div.blog-archives article, div.recent-posts article {
+div.recent-posts article {
+	border-bottom: 0px dotted #AAA;
+}
+div.blog-archives article{
     font-size: 1.1em;
     padding: .3em .2em;
     position: relative;
     overflow: auto;
+}
+div.recent-posts article {
+	font-size: 1.1em;
 }
 div.blog-archives article {
     margin-left: 6em;
@@ -550,8 +587,7 @@ div.recent-posts-time {
 /* Index page */
 #allposts {
     color: #999;
-    float: right;
-    font-size: 75%;
+    font-size: 50%;
     font-weight: normal;
 }
 a#allposts:hover {
@@ -603,4 +639,9 @@ div.figure.align-left, .article-content img.align-left {
     float: left;
     margin-right: 1.5em;
 }
-
+/*overwrite bootstrip */
+.container-fluid {
+	width:80%;
+	margin:auto;
+	
+}

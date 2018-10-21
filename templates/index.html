@@ -87,21 +87,26 @@
     <div class="row-fluid">
         <div class="{{css_class}}">
             <header>
-            <h1 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/archives.html">all posts</a></h1>
+            <h2 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/archives.html">all posts</a></h2>
             </header>
         <div class="recent-posts">
             {% for article in articles %}
             {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT with context %}
             {% if loop.index0 < RECENT_ARTICLES_COUNT %}
-            <article>
-                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a>
-                <section>
+            <article class="recent-posts-article">
+                <h3> <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a></h3>
+                <!--<section>
                     posted in
                 <a href="{{ SITEURL }}/categories.html#{{ article.category.slug }}-ref">{{ article.category }}</a>
+				</section>
+				-->
                 <div class="recent-posts-time">
                 <time pubdate="pubdate" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                 </div>
-                </section>
+				<img src = "{{ SITEURL }}/{{ article.illustration }}">
+				<div class="recent-posts-readmore">
+				<a href="{{ SITEURL }}/{{ article.url }}"> Read More...</a>
+                </div>
             </article>
             {% endif %}
             {% endfor %}
