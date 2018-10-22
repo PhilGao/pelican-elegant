@@ -23,7 +23,7 @@
 {% block content %}
 <article>
 <div class="row-fluid">
-    <header class="page-header span10 offset2">
+    <header class="page-header span10 offset1">
     <h1><a href="{{ SITEURL }}/{{ page.url }}"> {{ page.title }} {%if page.subtitle %} <small> {{ page.subtitle }} </small> {% endif %} </a></h1>
     </header>
 </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="span8 article-content">
         {% else %}
-        <div class="span8 offset2 article-content">
+        <div class="span8 offset1 article-content">
             {% endif %}
 
             {{ page.content }}
@@ -46,7 +46,7 @@
             {{ comments(page) }}
         </div>
         <section>
-        <div class="span2" style="float:right;font-size:0.9em;">
+        <div class="span3" style="float:right;font-size:0.9em;">
             {% include '_includes/social_links.html' %}
             {% include '_includes/mailchimp.html' %}
         </div>

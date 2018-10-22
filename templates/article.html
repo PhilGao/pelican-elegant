@@ -23,7 +23,7 @@
 {% block content %}
 <article>
 <div class="row-fluid">
-    <header class="page-header span10 offset2">
+    <header class="page-header span10 offset1">
     <h1><a href="{{ SITEURL }}/{{ article.url }}"> {{ article.title }} {%if article.subtitle %} <small> {{ article.subtitle }} </small> {% endif %} </a></h1>
     </header>
 </div>
@@ -38,7 +38,7 @@
     </div>
     <div class="span8 article-content">
        {% else %}
-        <div class="span8 offset2 article-content">
+        <div class="span8 offset1 article-content">
             {% endif %}
 
             {% import '_includes/translations.html' as translations with context %}
@@ -78,7 +78,7 @@
             {% endif %}
         </div>
         <section>
-        <div class="span2" style="float:right;font-size:0.9em;">
+        <div class="span3" style="float:right;font-size:0.9em;">
             {% if article.date %}
             <h4>Published</h4>
             {% set day = article.date.strftime('%d')|int %}

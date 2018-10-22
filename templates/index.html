@@ -43,46 +43,10 @@
     </header>
     {% endif %}
 
-    <div class="row-fluid">
-        {% if LANDING_PAGE_ABOUT and LANDING_PAGE_ABOUT.details %}
-        {% set css_class = 'span8 offset2' %}
-        {% if PROJECTS and LANDING_PAGE_ABOUT %}
-        {% set css_class = 'span8' %}
-        {% endif %}
-        <div class="{{css_class}}">
-            <header>
-            <h1 id="about-me">About me</h1>
-            </header>
-            <div class="article-content">
-                {{ LANDING_PAGE_ABOUT.details }}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if PROJECTS %}
-        {% set css_class = 'span8 offset2' %}
-        {% if PROJECTS and LANDING_PAGE_ABOUT %}
-        {% set css_class = 'span4' %}
-        {% endif %}
-        <div class="{{css_class}}">
-            <header>
-            <h1 id="my-projects">My Projects</h1>
-            </header>
-            {% for project in PROJECTS %}
-            <ul class="list-all-articles">
-                <li>
-                <a href="{{ project.url }}" title="{{ project.name }}">{{ project.name }}</a> <span class="proj-desc">{{ project.description }}</span>
-                </li>
-            </ul>
-            {%endfor %}
-        </div>
-        {% endif %}
-    </div>
-
     {% if articles %}
-    {% set css_class = 'span8 offset2' %}
+    {% set css_class = 'span6 offset2' %}
     {% if articles and PROJECTS and LANDING_PAGE_ABOUT %}
-    {% set css_class = 'span12' %}
+    {% set css_class = 'span8' %}
     {% endif %}
     <div class="row-fluid">
         <div class="{{css_class}}">
@@ -112,6 +76,40 @@
             {% endfor %}
         </div>
         </div>
+		{% if LANDING_PAGE_ABOUT and LANDING_PAGE_ABOUT.details %}
+        {% set css_class = 'span2 offset2' %}
+        {% if PROJECTS and LANDING_PAGE_ABOUT %}
+        {% set css_class = 'span4' %}
+        {% endif %}
+        <div class="{{css_class}}">
+            <header>
+            <h1 id="about-me">About me</h1>
+            </header>
+            <div class="article-content">
+                {{ LANDING_PAGE_ABOUT.details }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% if PROJECTS %}
+        {% set css_class = 'span2 offset2' %}
+        {% if PROJECTS and LANDING_PAGE_ABOUT %}
+        {% set css_class = 'span4' %}
+        {% endif %}
+        <div class="{{css_class}}">
+            <header>
+            <h1 id="my-projects">My Projects</h1>
+            </header>
+            {% for project in PROJECTS %}
+            <ul class="list-all-articles">
+                <li>
+                <a href="{{ project.url }}" title="{{ project.name }}">{{ project.name }}</a> <span class="proj-desc">{{ project.description }}</span>
+                </li>
+            </ul>
+            {%endfor %}
+        </div>
+        {% endif %}
+		
     </div>
     {% endif %}
 </div>
